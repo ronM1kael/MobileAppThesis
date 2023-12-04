@@ -34,3 +34,7 @@ Route::post('/upload_file', 'App\Http\Controllers\StudentController@upload_file'
 Route::get('/myfiles/{id}', 'App\Http\Controllers\StudentController@myfiles')->name('myfiles');
 
 Route::delete('/delete_file/{file}', 'StudentController@deleteFile');
+
+Route::post('/add-announcements', 'AdminController@addAnnouncements');
+
+Route::get('/announcements', 'AdminController@listAnnouncement');
