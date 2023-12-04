@@ -64,4 +64,15 @@ class StaffController extends Controller
 
         return response()->json($staff);
     }
+
+    public function profile($id)
+    {
+        $staff = DB::table('staff')
+        ->join('users','users.id','staff.user_id')
+        ->select('staff.*','users.*')
+        ->where('user_id',Auth::id())
+        ->first();
+
+        return View::make('staff.profile',compact('staff'));
+    }
 }

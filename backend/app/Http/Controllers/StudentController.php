@@ -106,5 +106,15 @@ class StudentController extends Controller
 
         return response()->json(['student' => $student, 'files' => $files]);
     }
-    
+
+    public function getProfile($id)
+    {
+            $student = DB::table('students')
+                ->join('users', 'users.id', 'students.user_id')
+                ->select('students.*', 'users.*')
+                ->where('user_id', $id)
+                ->first();   
+
+        return response()->json($student);
+    }   
 }

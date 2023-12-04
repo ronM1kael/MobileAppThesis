@@ -53,4 +53,15 @@ class FacultyController extends Controller
             return response()->json($response, 200);
     }
 
+    public function getProfile($id)
+    {
+            $faculty = DB::table('faculty')
+                ->join('users', 'users.id', 'faculty.user_id')
+                ->select('faculty.*', 'users.*')
+                ->where('user_id', $id)
+                ->first();
+
+        return response()->json($faculty);
+    }
+
 }
