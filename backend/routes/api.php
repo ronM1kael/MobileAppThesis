@@ -42,3 +42,5 @@ Route::put('/facultys/profiles/{id}', 'FacultyController@updateprofiles');
 Route::put('/staffs/profiles/{id}', 'StaffController@updateprofiles');
 
 Route::get('/count-users', 'AdminController@countUsers');
+
+Route::get('/count-request', 'AdminController@countRequest');
