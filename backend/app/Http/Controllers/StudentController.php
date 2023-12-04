@@ -117,4 +117,40 @@ class StudentController extends Controller
 
         return response()->json($student);
     }   
+
+    public function updateprofiles(Request $request, $id)
+    {
+        $student_id = DB::table('students')
+            ->select('students.id')
+            ->where('user_id', $request->user_id)
+            ->first();
+
+        $student = Student::find($student_id->id);
+        $student->fname = $request->fname;
+        $student->lname = $request->lname;
+        $student->mname = $request->mname;
+        $student->college = $request->college;
+        $student->course = $request->course;
+        $student->tup_id = $request->tup_id;
+        $student->phone = $request->phone;
+        $student->address = $request->address;
+        $student->save();
+
+        $user = User::find($request->user_id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->mname = $request->mname;
+        $user->save();
+
+        // Assuming Student and User details are needed in the JSON response
+        $responseData = [
+            'student' => $student,
+            'user' => $user,
+            'message' => 'Profile was successfully updated'
+        ];
+
+        // Returning JSON response
+        return response()->json($responseData);
+
+    }
 }

@@ -90,7 +90,6 @@ const CertificationForm = (props) => {
   //       setFiles(response.data);
   //       console.log("Files:", response.data);
   //     } catch (error) {
-  //       console.error("Error fetching files:", error);
   //     }
   //   };
 

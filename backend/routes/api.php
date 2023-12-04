@@ -35,4 +35,10 @@ Route::get('/myfiles/{id}', 'App\Http\Controllers\StudentController@myfiles')->n
 
 Route::delete('/delete_file/{file}', 'StudentController@deleteFile');
 
+Route::put('/students/profiles/{id}', 'StudentController@updateprofiles');
+
+Route::put('/facultys/profiles/{id}', 'FacultyController@updateprofiles');
+
+Route::put('/staffs/profiles/{id}', 'StaffController@updateprofiles');
+
 Route::get('/count-users', 'AdminController@countUsers');

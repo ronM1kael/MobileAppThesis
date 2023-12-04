@@ -40,6 +40,8 @@ const Register = (props) => {
                 await getUserInfo(response.authentication.accessToken);
             }
         } else {
+            // setUserInfo(JSON.parse(staff));
+            // UserInfo(JSON.parse(user));
             setUserInfo(JSON.parse(user));
         }
     }
