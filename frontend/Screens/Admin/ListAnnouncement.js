@@ -77,14 +77,14 @@ const ListAnnouncement = ({ item, index, deleteFile }) => {
                 ]}
             >
 
-                <View style={styles.containers}>
+                {/* <View style={styles.containers}>
                     <View style={styles.content}>
                         <View style={styles.contentHeader}>
                             <Text style={styles.name}>Title: {item.title}</Text>
                         </View>
                         <Text rkType="primary3 mediumLine">Content: {item.content}</Text>
                     </View>
-                </View>
+                </View> */}
 
             </TouchableOpacity>
         </View>
