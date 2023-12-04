@@ -91,6 +91,67 @@ const ListAnnouncement = ({ item, index, deleteFile }) => {
     );
 };
 
+const styles = StyleSheet.create({
+    name: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    contentHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginBottom: 6,
+    },
+    content: {
+        marginLeft: 16,
+        flex: 1,
+    },
+    containers: {
+        paddingLeft: 19,
+        paddingRight: 16,
+        paddingVertical: 12,
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+    },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+    },
+    searchContainer: {
+        backgroundColor: '#eee',
+        padding: 8,
+        marginTop: 60,
+    },
+    searchInput: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        padding: 8,
+    },
+    itemContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 16,
+        borderBottomWidth: 1,
+        borderBottomColor: '#eee',
+    },
+    image: {
+        width: 48,
+        height: 48,
+        borderRadius: 24,
+    },
+    textContainer: {
+        marginLeft: 16,
+    },
+    nameText: {
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    phoneText: {
+        fontSize: 16,
+        color: '#999',
+    },
+})
 
 
 export default ListAnnouncement

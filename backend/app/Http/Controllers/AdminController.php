@@ -20,4 +20,20 @@ class AdminController extends Controller
     {
         return Announcement::all();
     }
+
+    public function countUsers()
+    {
+        $staffCount = User::where('role', 'Staff')->count();
+        $studentCount = User::where('role', 'Student')->count();
+        $faculty = User::where('role', 'Faculty')->count();
+    // Add more counts for other roles if needed
+
+    return response()->json([
+        'staff_request_count' => $staffCount,
+        'student_request_count' => $studentCount,
+        'faculty_request_count' => $faculty,
+        // Add counts for other roles in a similar manner
+    ]);
+    
+    }
 }
