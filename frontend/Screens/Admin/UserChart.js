@@ -65,8 +65,8 @@ const Dashboard = () => {
               withVerticalLabels
               withHorizontalLabels
               chartConfig={{
-                backgroundGradientFrom: '#4CAF50',
-                backgroundGradientTo: '#4CAF50',
+                backgroundGradientFrom: '#800000',
+                backgroundGradientTo: '#800000',
                 decimalPlaces: 0,
                 color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
                 labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
