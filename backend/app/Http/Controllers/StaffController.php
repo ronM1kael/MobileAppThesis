@@ -75,4 +75,40 @@ class StaffController extends Controller
 
         return View::make('staff.profile',compact('staff'));
     }
+
+    public function updateprofiles(Request $request, $id)
+    {
+        $staff_id = DB::table('staff')
+            ->select('staff.id')
+            ->where('user_id', $request->user_id)
+            ->first();
+
+        $staff = Staff::find($staff_id->id);
+        $staff->fname = $request->fname;
+        $staff->lname = $request->lname;
+        $staff->mname = $request->mname;
+        $staff->position = $request->position;
+        $staff->designation = $request->designation;
+        $staff->tup_id = $request->tup_id;
+        $staff->phone = $request->phone;
+        $staff->address = $request->address;
+        $staff->save();
+
+        $user = User::find($request->user_id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->mname = $request->mname;
+        $user->save();
+
+        // Assuming Student and User details are needed in the JSON response
+        $responseData = [
+            'staff' => $staff,
+            'user' => $user,
+            'message' => 'Profile was successfully updated'
+        ];
+
+        // Returning JSON response
+        return response()->json($responseData);
+
+    }
 }

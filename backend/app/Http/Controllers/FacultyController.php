@@ -64,4 +64,41 @@ class FacultyController extends Controller
         return response()->json($faculty);
     }
 
+    public function updateprofiles(Request $request, $id)
+    {
+        $faculty_id = DB::table('faculty')
+            ->select('faculty.id')
+            ->where('user_id', $request->user_id)
+            ->first();
+
+        $faculty = Faculty::find($faculty_id->id);
+        $faculty->fname = $request->fname;
+        $faculty->lname = $request->lname;
+        $faculty->mname = $request->mname;
+        $faculty->department = $request->department;
+        $faculty->position = $request->position;
+        $faculty->designation = $request->designation;
+        $faculty->tup_id = $request->tup_id;
+        $faculty->phone = $request->phone;
+        $faculty->address = $request->address;
+        $faculty->save();
+
+        $user = User::find($request->user_id);
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->mname = $request->mname;
+        $user->save();
+
+        // Assuming Student and User details are needed in the JSON response
+        $responseData = [
+            'faculty' => $faculty,
+            'user' => $user,
+            'message' => 'Profile was successfully updated'
+        ];
+
+        // Returning JSON response
+        return response()->json($responseData);
+
+    }
+
 }
