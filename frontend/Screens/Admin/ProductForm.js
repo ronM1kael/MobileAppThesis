@@ -90,37 +90,36 @@ const CertificationForm = (props) => {
   //       setFiles(response.data);
   //       console.log("Files:", response.data);
   //     } catch (error) {
-  //       console.error("Error fetching files:", error);
   //     }
   //   };
 
   //   fetchData();
   // }, []);
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const jwtToken = await AsyncStorage.getItem('jwt');
-//         const userProfile = context.stateUser.userProfile;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const jwtToken = await AsyncStorage.getItem('jwt');
+        const userProfile = context.stateUser.userProfile;
 
-//         if (!jwtToken || !context.stateUser.isAuthenticated || !userProfile || !userProfile.id) {
-//           console.error('Invalid authentication state');
-//           return;
-//         }
+        if (!jwtToken || !context.stateUser.isAuthenticated || !userProfile || !userProfile.id) {
+          console.error('Invalid authentication state');
+          return;
+        }
 
-//         const response = await axios.get(`${baseURL}get_files/${userProfile.id}`, {
-//           headers: { Authorization: `Bearer ${jwtToken}` },
-//         });
+        const response = await axios.get(`${baseURL}get_files/${userProfile.id}`, {
+          headers: { Authorization: `Bearer ${jwtToken}` },
+        });
 
-//         setFiles(response.data.files); // Assuming response.data.files contains the files array
-//         console.log('Files:', response.data.files);
-//       } catch (error) {
-//         console.error('Error fetching files:', error);
-//       }
-//     };
+        setFiles(response.data.files); // Assuming response.data.files contains the files array
+        console.log('Files:', response.data.files);
+      } catch (error) {
+        console.error('Error fetching files:', error);
+      }
+    };
 
-//     fetchData();
-//   }, []);
+    fetchData();
+  }, []);
 
   const deleteFile = async (fileId) => {
     try {
