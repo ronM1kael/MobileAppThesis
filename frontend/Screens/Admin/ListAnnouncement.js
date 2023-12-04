@@ -55,7 +55,7 @@ const ListAnnouncement = ({ item, index, deleteFile }) => {
                             medium
                             secondary
                             // onPress={() => [navigation.navigate("ProductForm", { item }),
-                            // setModalVisible(false)
+                          
                             // ]}
                             title="Edit"
                         >
