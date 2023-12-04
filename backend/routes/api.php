@@ -26,3 +26,6 @@ Route::post('/facultymember/register', 'App\Http\Controllers\FacultyController@R
 
 // REGISTER STAFG
 Route::post('/staff/register', 'App\Http\Controllers\StaffController@RegisterMobile');
+
+Route::post('/login-mobile', 'Auth\LoginController@LoginMobile');
+
