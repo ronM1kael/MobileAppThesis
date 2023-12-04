@@ -20,6 +20,9 @@ import Announcement from '../Screens/Product/AnnouncementContainer'
 
 import AuthGlobal from "../Context/Store/AuthGlobal"
 
+import UserChart from "../Screens/Admin/UserChart"
+import RequestChart from "../Screens/Admin/RequestChart"
+
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -46,6 +49,8 @@ const Main = () => {
     <Stack.Navigator>
       <Stack.Screen name="Admin" component={Admin} />
       <Stack.Screen name="AnnouncementForm" component={AnnouncementForm}
+                   />
+      <Stack.Screen name="RequestChart" component={RequestChart}
                    />
       {/* Add more screens if needed */}
     </Stack.Navigator>

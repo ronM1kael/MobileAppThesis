@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 function MyStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen 
+            <Stack.Screen
                 name="Products"
                 component={Products}
                 options={{
@@ -19,13 +19,13 @@ function MyStack() {
                 }}
             />
             <Stack.Screen name="Categories" component={Categories} />
-            <Stack.Screen name="Orders" 
-                          component={Orders} />
-            <Stack.Screen name="ProductForm" 
-                          component={ProductForm}
-                          options={{
-                            title: "Add File"
-                                   }} />
+            <Stack.Screen name="Orders"
+                component={Orders} />
+            <Stack.Screen name="ProductForm"
+                component={ProductForm}
+                options={{
+                    title: "Add File"
+                }} />
         </Stack.Navigator>
     )
 }
