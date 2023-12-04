@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// REGISTER STUDENT
+Route::post('/students/register', 'App\Http\Controllers\StudentController@RegisterMobile');
+
+// REGISTER FACULTY
+Route::post('/facultymember/register', 'App\Http\Controllers\FacultyController@RegisterMobile');
+
+// REGISTER STAFG
+Route::post('/staff/register', 'App\Http\Controllers\StaffController@RegisterMobile');
